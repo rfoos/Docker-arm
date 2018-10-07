@@ -1,19 +1,23 @@
 # Docker-arm
 
 This repository contains source code for the article
+https://dev.to/dalimay28/using-docker-for-embedded-systems-development-b16
+
+This fork updates this to 16.04 tools, and a custom version of OpenOCD.
+OpenOCD is up to date. The additions are staged review at 
 
 Contents:
 
 1.Dockerfile 
 
-2.example of blink led Project for STM32F4 Discovery with it's libraries
+2.example for ECM3531 from ETA Compute.
 
 ## How to setup The environment :
 
 ```
 cd ~
 sudo apt-get install git 
-git clone https://github.com/maydali28/Docker-arm/
+git clone https://github.com/rfoos/Docker-arm/
 cd ~/Docker-arm
 ```
 
@@ -22,7 +26,7 @@ cd ~/Docker-arm
 #### Build the image :
 
 ```
-cd ~/Docker-arm
+cd ~/Docker-arm--enable-stlink --enable-jlink --enable-ftdi --enable-cmsis-dap
 docker build -t docker-arm .
 ```
 
